@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            background-image: url(./bg.png);
+        }
+
+        .main {
+            background-color: #FFFFFF;
+            width: 20%;
+            height: 40%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .inputbox {
+            float: right;
+            width: 65%;
+        }
+
+        .submit {
+            margin-right: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <label>Registration:</label>
+        <form action="/submit" method="post" onsubmit="return validateForm()">
+            <p>
+                Name: <input type="text" name="uname" required="yes" class="inputbox">
+            </p>
+            <p>
+                Surname: <input type="text" name="surname" required="yes" class="inputbox">
+            </p>
+            <p>
+                E-mail: <input type="email" name="email" class="inputbox">
+            </p>
+            <p>
+                Password: <input type="password" name="password" id="password" required="yes" class="inputbox">
+            </p>
+            <p>
+                Password again: <input type="password" id="confirmPassword" required="yes" class="inputbox">
+            </p>
+            <p>
+                Show password: <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+            </p>
+            <p>
+                <button type="submit">Submit now</button>
+                <input type="reset" value="Reset">
+            </p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function togglePasswordVisibility()
+        {
+            let passwordInput = document.getElementById("password");
+            let confirmPasswordInput = document.getElementById("confirmPassword");
+            let showPasswordCheckbox = document.getElementById("showPassword");
+
+            passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
+            confirmPasswordInput.type = showPasswordCheckbox.checked ? "text" : "password";
+        }
+
+        function validateForm()
+        {
+            let passwordInput = document.getElementById("password");
+            let confirmPasswordInput = document.getElementById("confirmPassword");
+
+            if (passwordInput.value !== confirmPasswordInput.value)
+            {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

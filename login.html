@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Catalog</title>
+</head>
+<style>
+    body {
+        background-image: url(./bg.png);
+    }
+
+    .main {
+        background-color: #FFFFFF;
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .submit {
+        margin-right: 60px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <label>Login to Catalog:</label>
+        <p></p>
+        <form action="/login" method="post">
+            User's e-mail: <input type="email" name="email" required>
+            Password: <input type="password" name="password" required>
+            <button type="submit">connect</button>
+        </form>
+        <p>
+            <a href="registration.html">Registration here</a>
+        </p>
+    </div>
+</body>
+
+</html>
